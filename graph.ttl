@@ -1,0 +1,129 @@
+@prefix schema: <http://schema.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+
+schema:agent a rdf:Property;
+    rdfs:domain schema:Action;
+    rdfs:isDefinedBy <http://schema.org/Action>;
+    .
+
+schema:DonateAction a rdfs:Class;
+    rdfs:subClassOf schema:TradeAction;
+    rdfs:isDefinedBy <http://schema.org/DonateAction>;
+    .
+
+schema:addressCountry a rdf:Property;
+    rdfs:domain schema:PostalAddress;
+    rdfs:range schema:Country;
+    rdfs:isDefinedBy <http://schema.org/PostalAddress>;
+    .
+
+schema:additionalType a rdf:Property;
+    rdfs:domain schema:Thing;
+    rdfs:range rdfs:Resource;
+    rdfs:isDefinedBy <http://schema.org/Thing>;
+    .
+
+schema:object a rdf:Property;
+    rdfs:domain schema:Action;
+    rdfs:range schema:Thing;
+    rdfs:isDefinedBy <http://schema.org/Action>;
+    .
+
+schema:instrument a rdf:Property;
+    rdfs:domain schema:Action;
+    rdfs:range schema:Thing;
+    rdfs:isDefinedBy <http://schema.org/Action>;
+    .
+
+schema:location a rdf:Property;
+    rdfs:domain schema:Organization;
+    rdfs:domain schema:Action;
+    rdfs:range schema:PostalAddress;
+    rdfs:isDefinedBy <http://schema.org/Action>;
+    rdfs:isDefinedBy <http://schema.org/Organization>;
+    .
+
+schema:recipient a rdf:Property;
+    rdfs:range schema:Organization;
+    rdfs:range schema:Audience;
+    rdfs:range schema:Person;
+    rdfs:isDefinedBy <http://schema.org/DonateAction>;
+    .
+
+schema:Comment a rdfs:Class;
+    rdfs:subClassOf schema:CreativeWork;
+    rdfs:isDefinedBy <http://schema.org/Comment>;
+    .
+
+schema:description a rdf:Property;
+    rdfs:domain schema:Thing;
+    rdfs:range xsd:string;
+    rdfs:isDefinedBy <http://schema.org/Thing>;
+    .
+
+schema:addressLocality a rdf:Property;
+    rdfs:domain schema:PostalAddress;
+    rdfs:range xsd:string;
+    rdfs:isDefinedBy <http://schema.org/PostalAddress>;
+    .
+
+schema:price a rdf:Property;
+    rdfs:domain schema:TradeAction;
+    rdfs:domain schema:PriceSpecification;
+    rdfs:domain schema:Offer;
+    rdfs:range xsd:string;
+    rdfs:range xsd:decimal;
+    rdfs:isDefinedBy <http://schema.org/TradeAction>;
+    rdfs:isDefinedBy <http://schema.org/PriceSpecification>;
+    rdfs:isDefinedBy <http://schema.org/Offer>;
+    .
+schema:priceCurrency a rdf:Property;
+    rdfs:domain schema:PriceSpecification;
+    rdfs:domain schema:Offer;
+    rdfs:range xsd:string;
+    rdfs:isDefinedBy <http://schema.org/PriceSpecification>;
+    rdfs:isDefinedBy <http://schema.org/Offer>;
+    .
+
+schema:priceSpecification a rdf:Property;
+    rdfs:domain schema:Offer;
+    rdfs:domain schema:Demand;
+    rdfs:range schema:PriceSpecification;
+    rdfs:isDefinedBy <http://schema.org/Offer>;
+    rdfs:isDefinedBy <http://schema.org/Demand>;
+    .
+
+schema:endTime a rdf:Property;
+    rdfs:domain schema:Action;
+    rdfs:range schema:DateTime;
+    rdfs:isDefinedBy <http://schema.org/Action>;
+    .
+
+schema:sameAs a rdf:Property;
+    rdfs:domain schema:Thing;
+    rdfs:range rdfs:Resource;
+    rdfs:isDefinedBy <http://schema.org/Thing>;
+    .
+
+schema:author a rdf:Property;
+    rdfs:domain schema:CreativeWork;
+    rdfs:range schema:Organization;
+    rdfs:range schema:Person;
+    rdfs:isDefinedBy <http://schema.org/CreativeWork>;
+    .
+
+schema:email a rdf:Property;
+    rdfs:domain schema:Person;
+    rdfs:domain schema:ContactPoint;
+    rdfs:domain schema:Organization;
+    rdfs:range xsd:string;
+    rdfs:isDefinedBy <http://schema.org/Person>;
+    rdfs:isDefinedBy <http://schema.org/ContactPoint>;
+    rdfs:isDefinedBy <http://schema.org/Organization>;
+    .
+
